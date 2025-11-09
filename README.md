@@ -63,7 +63,7 @@ This architecture includes:
     
     ### Clone the workshop Github Repo on your local
     ```bash
-    git clone https://github.com/RakeshNKundar/multi-agent-streaming-system-with-confluent.git
+    git clone [https://github.com/marksakurada/multi-agent-streaming-system-with-confluent]
     ```
    
     ###  Install dependencies
