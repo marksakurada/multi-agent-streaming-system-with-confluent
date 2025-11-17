@@ -43,17 +43,42 @@ This architecture includes:
 
 
 ## Requirements
-- **Access:** 
-    - *Confluent Cloud Account Access* - https://cnfl.io/getstarted
 
-    - *MongoDB Atlas Account Access*
-      - MongoDB provides a free-tier (M0) cluster, ideal for development and workshops. We’ll be using this during today’s session.
-      - You can proceed with your existing MongoDB Atlas account if you already have one.
-      - If not, you can sign up for a free account here: https://www.mongodb.com/cloud/atlas/register. 
-      
+  ### 1. Setup Access: 
 
-    - *AWS Account Access*
-      - Will be shared with you by your workshop co-ordinator.
+    **⚠️ NOTE:** Please use **US-WEST-2** region for this workshop as some LLM models used in this workshop might not have the same functionalities in other regions. 
+
+    Please open find your name and use those credentials:
+
+     https://docs.google.com/spreadsheets/d/1cBbf-YvJyeWajlvc_SGCmn6KUPCX_0LZvB15IzMU8To/edit?gid=0#gid=0
+
+  <details>
+    <summary>Manual Setup Instructions: Click to expand/collapse</summary>
+
+     - *Confluent Cloud Account Access* - https://cnfl.io/getstarted
+
+      - *MongoDB Atlas Account Access*
+        - MongoDB provides a free-tier (M0) cluster, ideal for development and workshops. We’ll be using this during today’s session.
+        - You can proceed with your existing MongoDB Atlas account if you already have one.
+        - If not, you can sign up for a free account here: https://www.mongodb.com/cloud/atlas/register. 
+        
+
+      - *AWS Account Access*
+        - Will be shared with you by your workshop co-ordinator.
+
+  </details>
+  
+  ### Clone the workshop Github Repo on your local
+  ```bash
+    git clone https://github.com/marksakurada/multi-agent-streaming-system-with-confluent
+  ```
+  
+  ###  Install dependencies
+  You can either install the required tools manually (links below) or run the provided setup script:
+  ```bash
+    chmod +x ./setup/install_dependencies.sh
+    ./setup/install_dependencies.sh
+  ```
 
 - **Local Software Requirements:** 
     - [Python3 > 3.9](https://www.python.org/downloads/)
@@ -61,37 +86,10 @@ This architecture includes:
     - [Confluent Cloud CLI](https://docs.confluent.io/confluent-cli/current/install.html)
     - [MongoDB Database Tools](https://www.mongodb.com/docs/database-tools/installation/)
     
-    ### Clone the workshop Github Repo on your local
-    ```bash
-    git clone [https://github.com/marksakurada/multi-agent-streaming-system-with-confluent]
-    ```
-   
-    ###  Install dependencies
-    You can either install the required tools manually (links above) or run the provided setup script:
-    ```bash
-    chmod +x ./setup/install_dependencies.sh
-    ./setup/install_dependencies.sh
-    ```
-
-- **Sign up for Confluent Cloud**
-    - Navigate to [Confluent Cloud Sign Up](https://cnfl.io/getstarted).
-    - Sign up with any of the desired identity providers or your email ID.
-        <p><img src="assets/img/signup.png" alt="sign-up" width="300" /></p>
-    - Finish creating your account by filling in a couple of details.
-        <p><img src="assets/img/finish.png" alt="finish" width="300" /></p>
-    - Click on skip for adding your teammates for now. Feel free to add your teammates at a later point in time.
-        <p><img src="assets/img/teammates.png" alt="finish" width="300" /></p>
-    - Answer a couple of questions, and you are set to create your first cluster!
-        <p><img src="assets/img/questions.png" alt="questions" width="300" /></p>
-    - Click on "Next" to create a cluster and enter promo code details.
-        <p><img src="assets/img/cluster.png" alt="cluster" width="300" /></p>
-    - Entering your credit card details and receive $400 in free credits.
-    
-
 ---
-
+<details>
 ## 🚀 Quick Start (TL;DR)
-
+<summary>Click to expand/collapse</summary>
 1. ### Create a Confluent Cloud API Key
     Create Confluent Cloud API Key for your confluent cloud account with resource scope as Cloud resource management.
     - Go to https://confluent.cloud/settings/api-keys
@@ -140,7 +138,8 @@ This architecture includes:
     In the event an AWS account is not provided to you for this workshop, you can use your own AWS account. When doing so you can deploy the upcoming Terraform script using [IAM Access Keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) or the [AWS CLI Profile](https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-options.html) (ex. `aws configure --profile <profilename>`). <br><br>
     **⚠️ NOTE:** Please use **US-WEST-2** region for this workshop as some LLM models used in this workshop might not have the same functionalities in other regions. 
 
-   
+</details>
+
 5. ### Setup environment variables
 
 1. Go to the AWS Console and navigate to the Amazon Bedrock service.
