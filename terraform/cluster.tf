@@ -1,3 +1,4 @@
+variable "project_name" {}
 
 resource "confluent_service_account" "default" {
   display_name = "workplace_assistant_sa_${random_string.random.id}"
@@ -5,9 +6,9 @@ resource "confluent_service_account" "default" {
 }
 
 resource "confluent_environment" "default" {
-  display_name = "confluent_agentic_workshop_${random_string.random.id}"
+  display_name = "confluent_agentic_workshop_${var.project_name}_${random_string.random.id}"
   stream_governance {
-    package = "ESSENTIALS"
+    package = "ADVANCED"
   }
   lifecycle {
     prevent_destroy = false
@@ -15,7 +16,7 @@ resource "confluent_environment" "default" {
 }
 
 resource "confluent_kafka_cluster" "default" {
-  display_name = "workplace_assistant_${random_string.random.id}"
+  display_name = "workplace_assistant_${var.project_name}_${random_string.random.id}"
   availability = "SINGLE_ZONE"
   cloud        = "AWS"
   region       = data.aws_region.current.name
